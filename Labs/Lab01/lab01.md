@@ -48,9 +48,7 @@ f.  Powróć do katalogu „Pulpit" i pobierz katalog „moos-ivp-extend" za
 g.  Podobnie jak w przypadku poprzedniego katalogu należy wykonać
     znajdujący się w nim skrypt „build.sh"
 
-```{=html}
-<!-- -->
-```
+
 3.  Edycja pliku „.bashrc"
 
     a.  W terminalu przejdź do katalogu „moos-ivp" i za pomocą polecenia
@@ -83,16 +81,13 @@ e.  Zapisz plik oraz przeładuj powłokę za pomocą polecenia
 >
 wynikiem działania polecenia jest wyświetlenie aplikacji pMarineViewer
 
-![](images\marineviewer.jpg)
+![Okno aplikacji pMarineViewer](images/marineviewer.jpg)
 
-Rysunek . Okno aplikacji pMarineViewer
 
 c.  Aby zatrzymać aplikację przejdź do okna terminala i użyj kombinacji\
     klawiszy „ctrl + c"
 
-```{=html}
-<!-- -->
-```
+
 5.  Tworzenie repozytorium git
 
     a.  Zainstaluj pakiet git za pomocą polecenia:
