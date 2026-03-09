@@ -116,7 +116,9 @@ f.  Utwórz nowe prywatne repozytorium na portalu github o następującej
 
 g.  Połącz repozytorium lokalne z repozytorium na portalu github
 
-h.  Prześlij repozytorium lokalne na github
+h.  Przygotuj plik .gitignore w taki sposób aby do repozytorium trafiała tylko zawartość katalogów moos-ivp-extend/src i moos-ivp-extend/missions 
 
-i.  W zakładce Settings-\>Collaborators dodaj konto wskazane przez
+i.  Prześlij repozytorium lokalne na github
+
+j.  W zakładce Settings-\>Collaborators dodaj konto wskazane przez
     wykładowcę

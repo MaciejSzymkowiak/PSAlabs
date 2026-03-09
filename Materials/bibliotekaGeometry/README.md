@@ -221,3 +221,182 @@ TARGET_LINK_LIBRARIES(MyApp
 3. wywołujesz `get_spec()`
 4. publikujesz wynik przez `Notify(...)`
 5. oglądasz obiekt w `pMarineViewer`
+
+
+
+
+
+---
+
+# Biblioteka `angle_utils`
+
+Biblioteka `angle_utils` zawiera funkcje pomocnicze do pracy z **kątami i kierunkami**.  
+Jest bardzo często używana w aplikacjach MOOS do obliczeń związanych z:
+
+- kursem pojazdu
+- kierunkiem do punktu
+- różnicą pomiędzy dwoma kursami
+- konwersją między układami kątów
+
+W MOOS większość kątów jest wyrażana w **stopniach**, gdzie:
+
+```
+0°   = kierunek północ
+90°  = wschód
+180° = południe
+270° = zachód
+```
+
+---
+
+# Najważniejsze funkcje
+
+## `relAng(x1, y1, x2, y2)`
+
+Oblicza **kurs (bearing)** z punktu `(x1,y1)` do punktu `(x2,y2)`.
+
+### Przykład
+
+```cpp
+double heading = relAng(x1, y1, x2, y2);
+```
+
+Typowe zastosowanie:
+
+- wyznaczenie kierunku do waypointa
+- określenie kursu do celu
+
+---
+
+## `angle360(angle)`
+
+Normalizuje kąt do zakresu:
+
+```
+0° – 360°
+```
+
+### Przykład
+
+```cpp
+double h = angle360(-45); 
+// wynik: 315
+```
+
+---
+
+## `angle180(angle)`
+
+Normalizuje kąt do zakresu:
+
+```
+-180° – 180°
+```
+
+### Przykład
+
+```cpp
+double diff = angle180(270);
+// wynik: -90
+```
+
+Bardzo przydatne przy obliczaniu **najkrótszej różnicy kursów**.
+
+---
+
+## `angleDiff(a1, a2)`
+
+Oblicza **najmniejszą różnicę między dwoma kątami**.
+
+### Przykład
+
+```cpp
+double d = angleDiff(10, 350);
+```
+
+Wynik:
+
+```
+20
+```
+
+---
+
+## `angle180Diff(a1, a2)`
+
+Podobne do `angleDiff`, ale wynik zawiera znak:
+
+- dodatni → skręt w prawo
+- ujemny → skręt w lewo
+
+### Przykład
+
+```cpp
+double turn = angle180Diff(curr_heading, desired_heading);
+```
+
+---
+
+## `degToRadians(angle)`
+
+Konwertuje stopnie na **radiany**.
+
+```cpp
+double r = degToRadians(90);
+```
+
+---
+
+## `radToDegrees(angle)`
+
+Konwertuje radiany na **stopnie**.
+
+```cpp
+double d = radToDegrees(M_PI);
+```
+
+---
+
+# Typowy przykład użycia w aplikacji MOOS
+
+Obliczenie kursu do punktu docelowego:
+
+```cpp
+double desired_heading = relAng(curr_x, curr_y, target_x, target_y);
+```
+
+Obliczenie błędu kursu:
+
+```cpp
+double heading_error = angle180Diff(curr_heading, desired_heading);
+```
+
+---
+
+# Typowe zastosowania w MOOS-IVP
+
+Biblioteka `angle_utils` jest używana m.in. do:
+
+- obliczania kursu do waypointa
+- obliczania różnicy kursów
+- sterowania pojazdem
+- analizy trajektorii
+- implementacji zachowań IvP
+
+---
+
+# Co warto zapamiętać
+
+Najczęściej używane funkcje:
+
+| Funkcja | Opis |
+|---|---|
+| `relAng()` | kurs z punktu A do punktu B |
+| `angle360()` | normalizacja kąta do 0–360 |
+| `angle180()` | normalizacja kąta do -180–180 |
+| `angleDiff()` | różnica między kątami |
+| `angle180Diff()` | różnica z kierunkiem skrętu |
+| `degToRadians()` | konwersja stopnie → radiany |
+| `radToDegrees()` | konwersja radiany → stopnie |
+
+Te funkcje pojawiają się w większości aplikacji nawigacyjnych w **MOOS-IVP**.
