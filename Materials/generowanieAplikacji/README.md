@@ -49,7 +49,7 @@ nano CMakeLists.txt
 Dodaj podkatalog zawierający nową aplikację.
 
 ```cmake
-ADD_SUBDIRECTORY(src/Zad1)
+ADD_SUBDIRECTORY(pZad1)
 ```
 
 Zapisz plik i zamknij edytor.
