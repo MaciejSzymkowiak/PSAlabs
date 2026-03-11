@@ -126,7 +126,7 @@ XYPoint
 
 6. Wyślij punkt do pMarineViewer:
 
-```
+```cpp
 Notify("VIEW_POINT", point.get_spec());
 ```
 
@@ -175,6 +175,7 @@ które zostaną wyświetlone w **pMarineViewer**.
 - Sprawdź czy komunikat z `DEF_POINTS` nie jest pusty.
 - Upewnij się, że parser poprawnie usuwa nawiasy `(` i `)`.
 - Każdy punkt należy wysłać osobno do `VIEW_POINT`.
+- Przeczytaj dobrze opis bilioteki geometry w folderze Materials.
 
 ---
 
