@@ -132,6 +132,16 @@ Notify("VIEW_POINT", point.get_spec());
 
 ---
 
+# Sprawdzenie działania aplikacji
+
+W celu sprawdzenia działania aplikacji, w folderze zawierającym misję w terminalu wykonaj polcenie:
+```bash
+uPokeDB alpha.moos DEF_POINTS="(10,20);(30,40);(50,60)"
+```
+Spowoduje ono przesłanie komunikatu `DEF_POINTS` do MOOS_DB.
+
+---
+
 # Wymagania implementacyjne
 
 Program powinien korzystać z:
@@ -178,4 +188,6 @@ które zostaną wyświetlone w **pMarineViewer**.
 - Przeczytaj dobrze opis bilioteki geometry w folderze Materials.
 
 ---
+
+
 
