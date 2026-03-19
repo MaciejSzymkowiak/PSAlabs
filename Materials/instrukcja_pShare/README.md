@@ -31,7 +31,11 @@ pShare:
 4. Publikuje je lokalnie jako zmienne MOOS.
 
 ## Konfiguracja pShare
-
+Aby uruchomić aplikację pShare należy umieścić linię:
+```moos
+ Run = pShare	      @ NewConsole = false
+```
+w bloku konfiguracyjnym aplikacj Antler, a następnie dodać blok konfiguracyjny aplikacji pShare do pliku `*.moos`. 
 ```moos
 ProcessConfig = pShare
 {
