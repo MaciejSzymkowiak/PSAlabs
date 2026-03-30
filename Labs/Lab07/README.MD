@@ -98,7 +98,7 @@ ProcessConfig = pShare
   AppTick   = 4
   CommsTick = 4
 
-  input = route = localhost:9000
+  input = route = localhost:9001 // adres na jakim nasłuchuje aplikacja pShare
 
   output = src_name=NODE_REPORT, route=localhost:9000
 }
@@ -120,8 +120,7 @@ ProcessConfig = pShare
   AppTick   = 4
   CommsTick = 4
 
-  input = route = localhost:9001
-  input = route = localhost:9002
+  input = route = localhost:9000 
 
   output = src_name=DEPLOY, route=localhost:9001 // wysłanie informacji do pojazdu alpha
 }
